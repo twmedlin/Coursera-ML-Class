@@ -14,8 +14,18 @@ J = 0;
 %               You should set J to the cost.
 
 
+%h = {multiply X and theta, in the proper order that the inner dimensions match}
+% theta is a 1/2 
+h=X * theta ;
+
+%error = {the difference between h and y}
+error = h - y;
 
 
+error_sqr = error.^2;
+
+%J = {multiply 1/(2*m) times the sum of the error_sqr vector}
+J=(1/(2*m))* sum(error_sqr);
 
 % =========================================================================
 

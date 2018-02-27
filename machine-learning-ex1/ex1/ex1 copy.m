@@ -44,7 +44,7 @@ m = length(y); % number of training examples
 
 % Plot Data
 % Note: You have to complete the code in plotData.m
-plotData(X, y);
+%plotData(X, y);
 
 %X fprintf('Program paused. Press enter to continue.\n');
 %X pause;
@@ -69,13 +69,13 @@ J = computeCost(X, y, [-1 ; 2]);
 fprintf('\nWith theta = [-1 ; 2]\nCost computed = %f\n', J);
 fprintf('Expected cost value (approx) 54.24\n');
 
-%fprintf('Program paused. Press enter to continue.\n');
-%pause;
+fprintf('Program paused. Press enter to continue.\n');
+pause;
 
 fprintf('\nRunning Gradient Descent ...\n')
 % run gradient descent
 theta = gradientDescent(X, y, theta, alpha, iterations);
- 
+
 % print theta to screen
 fprintf('Theta found by gradient descent:\n');
 fprintf('%f\n', theta);

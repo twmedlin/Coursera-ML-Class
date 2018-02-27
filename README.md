@@ -1,2 +1,2 @@
 # Coursera-ML-Class
-Standford Machine Learning Class
+Standford Machine Learning Class Exercises

@@ -7,7 +7,7 @@ function [J, grad] = costFunction(theta, X, y)
 % Initialize some useful values
 m = length(y); % number of training examples
 
-% You need to return the following variables correctly 
+% You need to return the following variables correctly
 J = 0;
 grad = zeros(size(theta));
 
@@ -19,12 +19,24 @@ grad = zeros(size(theta));
 %
 % Note: grad should have the same dimensions as theta
 %
+redPart = (-1 * y )' * (log(sigmoid(X*theta)));
+ 
+
+bluePart =( 1 - y)' * log( 1 - sigmoid(X*theta));
+
+unregularizedPart = (1/m) * (redPart - bluePart);
 
 
+% theta(1)=0;
+% regularizedPart = (lambda / (2*m)) * (theta * theta');
+regularizedPart = 0;
 
+J = unregularizedPart + regularizedPart;
 
-
-
+% The left-side term is the vector product of X and (h - y), scaled by 1/m.
+grad = ( sigmoid(X * theta) - y)' * X;
+grad = (1/m) * grad; 
+junk = grad * 313;
 
 
 % =============================================================

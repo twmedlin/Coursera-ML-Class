@@ -30,13 +30,13 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+siggy = sigmoid( X * all_theta' );  %when X', siggy = 10x5000
 
+[p_val p_index] = (max (siggy,[],2));
 
-
-
-
-
+ 
 % =========================================================================
-
+ 
+p = p_index;
 
 end

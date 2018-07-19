@@ -20,14 +20,31 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
+ 
+for i = 1 : size(X,1)
 
-
-
-
-
-
+  centroidIndex = 1;
+  minDist = 999999999999;
+  
+  for j = 1 : K
+  
+    dist = 0;
+    for m =1 : size(X,2)
+      dist = dist +  ((X(i,m)-centroids(j,m))^2) ;
+    endfor
+     
+    if (dist < minDist) 
+      minDist = dist;
+      centroidIndex = j; 
+    endif
+  
+  endfor
+  idx(i) = centroidIndex;
+  
+endfor
 
 % =============================================================
+%disp(idx);
 
 end
 
